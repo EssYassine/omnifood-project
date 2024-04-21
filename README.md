@@ -22,7 +22,6 @@ Our journey to bring Omnifood to life involved a meticulous process, ensuring ev
 
 1. **Defining the Project:**
    The primary business goal with Omnifood is to offer monthly food subscriptions, providing users with convenient access to nutritious meals while generating revenue for our client. Simultaneously, our client's user-centric goal is to empower individuals to prioritize their health and well-being by making healthy eating effortless and affordable.
-
 The target audience comprises individuals who lead busy lives, embrace technology, prioritize their health through nutritious eating, and have a well-paying job.
 
 2. **Planning the Project:** Thorough planning was essential to ensure a smooth development process. We've established the website's personality, which embodies an upbeat, startup energy complemented by elements of tranquility and serenity, since the product is about the consumer's well-being. Additionally, we've collected the essential content and delineated the tasks ahead.
