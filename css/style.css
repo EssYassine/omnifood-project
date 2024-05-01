@@ -6,13 +6,18 @@
     
         == Font Weights: 
             Default: 400
+            Medium: 500
+            Semi-bold: 600
+            Bold: 700
 
         == Line heights:
             Default: 1
+            small : 1.5
+            paragraph : 1.6
     
     --- 02 COLORS
 
-        == Main / Primary: #e67e22
+        == Main / Primary: #e67e22 #e67e22
 
         == Accent / Secondary: 
 
@@ -26,131 +31,280 @@
 
     --- BORDER-RADIUS
 
+        == Default: 9px
+
     --- WHITESPACE 
 
     SPACING SYSTEM (px)
     2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 * {
-  padding: 0;
+  /*Box model stuff*/
   margin: 0;
+  padding: 0;
+  /*Miscellaneous*/
   box-sizing: border-box;
 }
 
 html {
+  /*Typography stuff*/
   font-size: 62.5%;
 }
 
 body {
-  font-family: "Rubik", sans-serif;
-  line-height: 1;
+  /*Typography stuff*/
+  font-family: 'Rubik', sans-serif;
   font-weight: 400;
   color: #555;
+  /*Miscellaneous*/
+  line-height: 1;
 }
 
-.section-hero {
-  background-color: #fdf2e9;
-  padding: 9.6rem 0;
+.arrow {
+  font-size: 1.4rem;
 }
 
-.hero {
-  max-width: 130rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 9.6rem;
-  align-items: center;
-}
+/* -------------------------------------------------------------------------- */
+/*                        General (Reusable) Components                       */
+/* -------------------------------------------------------------------------- */
 
 .heading-primary {
+  /*Box model stuff*/
   margin-bottom: 3.2rem;
+  /*Typography stuff*/
   font-size: 5.2rem;
   font-weight: 700;
-  line-height: 1.05;
   color: #333;
+  /*Miscellaneous*/
+  line-height: 1.05;
   letter-spacing: -0.5px;
-}
-
-.hero-description {
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 4.8rem;
 }
 
 .btn:link,
 .btn:visited {
+  /*Display stuff*/
   display: inline-block;
-  font-weight: 600;
-  font-size: 2rem;
-  text-decoration: none;
+  /*Box model stuff*/
   padding: 1.6rem 3.2rem;
   border-radius: 10px;
+  /*Typography stuff*/
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  /*Manipulations stuff*/
   transition: all 0.2s ease-in-out;
 }
 
 .btn--full:link,
 .btn-full:visited {
-  color: #fff;
+  /*Box model stuff*/
   background-color: #e67e22;
+  /*Typography stuff*/
+  color: #fff;
 }
+
 .btn--full:hover,
 .btn-full:active {
-  /* background-color: #cf711f; */
-  color: #e67e22;
+  /*Box model stuff*/
   background-color: #fdf2e9;
-
+  /*Typography stuff*/
+  color: #e67e22;
+  /*Miscellaneous*/
+  /* background-color: #cf711f; */
   /* Trick #1 to add border inside */
   box-shadow: inset 0 0 0 3px #e67e22;
-
   /* Trick #2 to add border inside */
-  /* outline: 3px solid #e67e22;
-  outline-offset: -3px; */
+  /* outline: 3px solid #e67e22;  outline-offset: -3px; */
 }
+
 .btn--outline:link,
 .btn-outline:visited {
-  color: #555;
+  /*Box model stuff*/
   background-color: #fff;
+  /*Typography stuff*/
+  color: #555;
+  /*Miscellaneous*/
   box-shadow: -1px 15px 26px -4px rgba(161, 151, 151, 0.15);
 }
+
 .btn--outline:hover,
 .btn-outline:active {
-  color: #e67e22;
+  /*Box model stuff*/
   background-color: #fff;
-}
-
-.hero-img {
-  width: 100%;
+  /*Typography stuff*/
+  color: #e67e22;
 }
 
 .margin-right-sm {
+  /*Box model stuff*/
   margin-right: 1.6rem !important;
 }
 
-.delivered-meals {
+/* -------------------------------------------------------------------------- */
+/*                                   Header                                   */
+/* -------------------------------------------------------------------------- */
+
+.header {
+  /*Display stuff*/
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  justify-content: space-between;
+  /*Box model stuff*/
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  background-color: #fdf2e9;
+  /*Miscellaneous*/
+  /* We want to make the navigation sticky,      giving a fixed height makes it easier */
+}
+
+.logo {
+  /*Box model stuff*/
+  height: 2.2rem;
+}
+
+/* ------------------------------- Navigation ------------------------------- */
+
+.main-nav-list {
+  list-style: none;
+  align-items: center;
+  display: flex;
+  gap: 3.2rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.2s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #e67e22;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Hero                                    */
+/* -------------------------------------------------------------------------- */
+
+.section-hero {
+  /*Positioning stuff*/
+  position: relative;
+  /*Box model stuff*/
+  padding: 4.8rem 0 9.6rem 0;
+  background-color: #fdf2e9;
+  /*Miscellaneous*/
+  /* z-index: -2; */
+}
+
+.hero {
+  /*Display stuff*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  /*Box model stuff*/
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  /*Miscellaneous*/
+  gap: 9.6rem;
+}
+
+.hero-highlight {
+  /*Positioning stuff*/
+  position: relative;
+  /*Box model stuff*/
+  background-color: transparent;
+  background-size: 100% 100%;
+  /*Miscellaneous*/
+  /* background: linear-gradient(to bottom, transparent 90%, #e67d226c 50%); */
+  /* Vesion 1 */
+  /* border-radius: 1em 0 1em 0.2em;  background-color: transparent;  background-image: linear-gradient(    -100deg,    rgba(255, 165, 0, 0) 50%,    rgba(255, 165, 0, 0.05) 50%,    rgb(230, 126, 34, 0.7) 100%  );  background-size: 200% 100%; */
+  /*  Version 2 */
+}
+
+.hero-highlight svg {
+  /*Miscellaneous*/
+  fill: #e67e22;
+  /* position: absolute; */
+  /* top: -0.005em; */
+  /* left: -3.5%; */
+  /* min-width: 10rem; */
+  /* width: 110%; */
+  /* height: 100%; */
+  /* z-index: -1; */
+}
+
+mark {
+  /*Typography stuff*/
+  color: #333;
+  /*Miscellaneous*/
+  /* color: #272727; */
+}
+
+.hero-description {
+  /*Box model stuff*/
+  margin-bottom: 4.8rem;
+  /*Typography stuff*/
+  font-size: 2rem;
+  /*Miscellaneous*/
+  line-height: 1.6;
+}
+
+.hero-img {
+  /*Box model stuff*/
+  width: 100%;
+}
+
+.delivered-meals {
+  /*Display stuff*/
+  display: flex;
+  align-items: center;
+  /*Box model stuff*/
   margin-top: 6.4rem;
+  /*Miscellaneous*/
+  gap: 1.6rem;
 }
 
 .delivered-imgs {
+  /*Display stuff*/
   display: flex;
 }
 
 .delivered-imgs img {
-  margin-right: -2rem;
-  height: 4.8rem;
+  /*Box model stuff*/
   width: 4.8rem;
+  height: 4.8rem;
+  margin-right: -2rem;
   border: 3px solid #fdf2e9;
   border-radius: 500px;
 }
 
 .delivered-imgs img:last-child {
+  /*Box model stuff*/
   margin: 0;
 }
+
 .delivered-txt {
+  /*Typography stuff*/
   font-size: 1.8rem;
 }
